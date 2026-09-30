@@ -1,0 +1,14 @@
+# Use native macOS Liquid Glass blur materials
+background-blur = macos-glass-regular
+# Or use macos-glass-clear for a more transparent look
+
+# Adjust background opacity if needed
+background-opacity = 0.60
+
+# Integrated Tabs Titlebar
+macos-titlebar-style = tabs
+
+# Edge Padding
+window-padding-x = 15
+window-padding-y = 7
+window-padding-balance = true
