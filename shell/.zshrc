@@ -5,7 +5,10 @@
 export KSAM_DOTFILES_HOME=$HOME/personal/dotfiles
 
 # Config file locations
-export STARSHIP_CONFIG=$KSAM_DOTFILES_HOME/shell/starship.toml
+export STARSHIP_CONFIG=$KSAM_DOTFILES_HOME/shell/config/starship.toml
+
+# Specific environments depending on $KSAM_ENV
+source $KSAM_DOTFILES_HOME/shell/env/$KSAM_ENV/.zshrc
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,7 +82,11 @@ ZSH_THEME="" # Use starship instead
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    fzf
+    zoxide
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,3 +120,27 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(starship init zsh)"
 
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+# Avoid duplicated in histor; append to history when shell exits, append immediately
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+
+# Deduplicate path
+typeset -U path PATH
+path=(
+    "$HOME/.local/bin"
+    $path
+)
+export PATH
+
+# Functions, aliases
+source $KSAM_DOTFILES_HOME/shell/aliases.sh
+source $KSAM_DOTFILES_HOME/shell/functions.zsh
