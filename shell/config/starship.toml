@@ -2,7 +2,7 @@
 
 # Based on https://starship.rs/presets/gruvbox-rainbow
 
-command_timeout = 1000
+#command_timeout = 1000
 
 format = """
 [](color_orange)\

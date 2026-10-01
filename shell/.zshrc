@@ -10,6 +10,8 @@ export STARSHIP_CONFIG=$KSAM_DOTFILES_HOME/shell/config/starship.toml
 # Specific environments depending on $KSAM_ENV
 source $KSAM_DOTFILES_HOME/shell/env/$KSAM_ENV/.zshrc
 
+
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -86,6 +88,7 @@ plugins=(
     git
     fzf
     zoxide
+    bazel
 )
 
 source $ZSH/oh-my-zsh.sh
