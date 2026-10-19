@@ -8,7 +8,9 @@ format = """
 [](color_orange)\
 $os\
 $username\
-[](bg:color_yellow fg:color_orange)\
+[](bg:color_pink fg:color_orange)\
+$hostname\
+[](bg:color_yellow fg:color_pink)\
 $directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
@@ -86,6 +88,12 @@ show_always = true
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_orange fg:color_fg0"
 format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = false
+style = "bg:color_pink fg:color_fg0"
+format = '[ 󰍹 $hostname ]($style)'
+disabled = false
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
