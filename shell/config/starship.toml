@@ -132,12 +132,13 @@ format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 style = "bg:color_aqua"
 format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 untracked = ""
+disabled = true
 
 [git_metrics]
 added_style = 'green bg:color_aqua'
 deleted_style = 'fg:color_pink bg:color_aqua'
 format = '[[+$added]($added_style)/[-$deleted]($deleted_style) ](bg:color_aqua)'
-disabled = false
+disabled = true
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
